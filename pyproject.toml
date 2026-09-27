@@ -16,6 +16,9 @@ dependencies = [
 testpaths = ["tests"]
 addopts = "-q"
 
+[tool.vercel]
+entrypoint = "app.main:app"
+
 [tool.ruff]
 line-length = 120
 target-version = "py311"
