@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Ask grounded questions about a PDF with page citations.">
+  <title>PageWise — Chat with your PDF</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header><div class="mark">P</div><div><h1>PageWise</h1><p>Answers grounded in your PDF, with page citations.</p></div></header>
+    <section class="privacy" aria-label="Privacy notice">Your document text is sent to the configured AI provider for indexing and answers. Avoid uploading sensitive material unless your organization permits it.</section>
+    <div class="grid">
+      <section class="panel upload-panel" aria-labelledby="upload-title">
+        <p class="eyebrow">1 · Add a document</p><h2 id="upload-title">Upload your PDF</h2>
+        <label class="drop" id="drop-zone" for="file-input" tabindex="0">
+          <span class="upload-icon">↑</span><strong>Drop a PDF here</strong><span>or choose a file · up to 10 MB</span>
+          <input id="file-input" type="file" accept="application/pdf,.pdf">
+        </label>
+        <div id="file-card" class="file-card hidden"><div><strong id="file-name"></strong><span id="file-meta"></span></div><button id="clear" class="quiet">Clear</button></div>
+        <div id="error" class="error hidden" role="alert"></div>
+        <div id="pipeline" class="pipeline" aria-live="polite"></div>
+      </section>
+      <section class="panel chat-panel" aria-labelledby="chat-title">
+        <p class="eyebrow">2 · Explore the document</p><h2 id="chat-title">Ask a question</h2>
+        <div id="messages" class="messages" aria-live="polite">
+          <div class="empty"><div class="spark">✦</div><strong>Your document assistant is ready</strong><span>Upload a PDF to begin. Answers will cite the pages they came from.</span></div>
+        </div>
+        <form id="ask-form"><label class="sr-only" for="question">Question about the PDF</label><textarea id="question" maxlength="2000" rows="2" placeholder="Ask about the document…" disabled></textarea><button id="send" disabled aria-label="Send question">↑</button></form>
+      </section>
+    </div>
+    <footer>AI answers can be inaccurate. Verify important details against the cited pages.</footer>
+  </main>
+  <script src="/static/app.js" defer></script>
+</body>
+</html>

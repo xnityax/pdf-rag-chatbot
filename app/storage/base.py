@@ -1,0 +1,9 @@
+from typing import Protocol
+
+from app.models import Chunk
+
+
+class ChunkStore(Protocol):
+    def put(self, session_id: str, chunks: list[Chunk], filename: str) -> None: ...
+    def get(self, session_id: str) -> tuple[list[Chunk], str] | None: ...
+    def delete(self, session_id: str) -> None: ...
