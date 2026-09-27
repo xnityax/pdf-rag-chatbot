@@ -14,7 +14,7 @@ The browser talks to a FastAPI API. Provider and storage responsibilities are se
 
 ## Local setup
 
-Prerequisites: Python 3.11+ and an OpenAI API key.
+Prerequisites: Python 3.12 and an OpenAI API key.
 
 ```bash
 python -m venv .venv
